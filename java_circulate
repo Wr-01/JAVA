@@ -1,0 +1,170 @@
+package Java05;
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ * @Author: 19261
+ * @Date: 2021/8/19 16:21
+ */
+
+public class Circulate {
+    public static void main(String[] args) {
+        int []arr={1,2,3,4,5,6,7,8,9,10};
+        int i;
+        int j;
+        for(i=0;i<10;i++){
+            for(j=i+1;j<10;j++){
+                if(arr[j]%2!=0){
+                    int tmp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=tmp;
+                }
+            }
+            System.out.print(arr[i]+" ");
+        }
+    }
+
+    public static int fibN(int n){
+        int fib=0;
+        if(n==1){
+            fib=0;
+        }
+        if(n==2||n==3){
+            fib=1;
+        }
+        if(n>3){
+            fib=fibN(n-1)+fibN(n-2);
+        }
+        return fib;
+    }
+    public static void main6(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("请输入一个整数:");
+        int n=scanner.nextInt();
+        int ret = fibN(n);
+        System.out.println("第" + n + "个斐波那契额数为：" + ret);
+    }
+
+    public static int max3(int num1,int num2,int num3){
+        int num=max2(num1,num2);
+        return max2(num,num3);
+    }
+    public static int max2(int num1, int num2) {
+        return num1>num2?num1:num2;
+    }
+    public static void main5(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("请输入三个数：");
+        int num1=scanner.nextInt();
+        int num2=scanner.nextInt();
+        int num3 = scanner.nextInt();
+        int ret=max3(num1,num2,num3);
+        System.out.println("三个数中的最大值为：" + ret);
+    }
+
+    public static int facSumNum(int num){
+        int ret =0;
+        for(int i=1;i<=num;i++){
+            ret+=facN(i);
+        }
+        return ret;
+    }
+    public static int facNum(int num){
+        int ret=1;
+        for(int i=1;i<=num;i++){
+            ret*=i;
+        }
+        return ret;
+    }
+    public static void main8(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入一个整数N：");
+        int num =scanner.nextInt();
+        int sum=facSumN(num);
+        System.out.println(num+"的阶乘和为："+sum);
+    }
+    public static int facSumN(int num){
+        int ret =0;
+        for(int i=1;i<=num;i++){
+            ret+=facN(i);
+        }
+        return ret;
+    }
+    public static int facN(int num){
+        int ret=1;
+        for(int i=1;i<=num;i++){
+            ret*=i;
+        }
+        return ret;
+    }
+    public static void main0(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输入一个整数N：");
+        int num =scanner.nextInt();
+        System.out.println(num+"的阶乘为："+facN(num));
+    }
+
+
+    public static void main7(String[] args) {
+        int[] array = {1, 2, 3, 4, 4, 3, 2, 1,8};
+        findOwnNum(array);
+    }
+    public static void findOwnNum(int[] arr) {
+        int ret = 0;
+        for (int i = 0; i < arr.length; i++) {
+            ret ^= arr[i]; // ret = ret ^ arr[i]
+        }
+        System.out.println(ret);
+    }
+
+
+
+
+
+
+
+    public static void Hello(){
+        System.out.println("hello!");
+    }
+    public static Boolean isleapYear(int year){
+        if(year%400==0||(year%100!=0&&year%4==0)){
+            return true;
+        }
+        return false;
+    }
+    public static void main3(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int year=scanner.nextInt();
+        System.out.println(isleapYear(year));
+        Hello();
+    }
+
+
+    public static void main2(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        char c=scanner.next().charAt(0);
+        System.out.println(c);
+        Random random=new Random();
+        int g= random.nextInt(100)+1;  //[1,100]
+        System.out.println(g);
+    }
+
+    public static void main1(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("请输入一个整数：");
+        int num=scanner.nextInt();
+        int count=1;
+        int n=0;
+        n=num/10;
+        while(n!=0){
+            count++;
+            n=n/10;
+        }
+        for (int i = count; i > 0; i--) {
+            int m=(int)(num/Math.pow(10,i-1));
+            System.out.print((int)m%10+",");
+        }
+        System.out.println();
+        scanner.close();
+    }
+}
