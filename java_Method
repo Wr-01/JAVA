@@ -1,0 +1,106 @@
+package Java05;
+import java.util.Scanner;
+
+/**
+ * @Author: 19261
+ * @Date: 2021/8/22 17:27
+ */
+public class Method {
+    public static void main(String[] args) {
+        double a=1;
+        double b=8;
+        double c=a/b;
+        System.out.printf("%.3f",c);
+    }
+
+    //斐波那契数
+    public static int fibN(int n){
+        int fib=0;
+        if(n==1){
+            fib=0;
+        }
+        if(n==2||n==3){
+            fib=1;
+        }
+        if(n>3){
+            fib=fibN(n-1)+fibN(n-2);
+        }
+        return fib;
+    }
+    public static void main5(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("请输入一个整数:");
+        int n=scanner.nextInt();
+        int ret = fibN(n);
+        System.out.println("第" + n + "个斐波那契额数为：" + ret);
+    }
+
+    //递归求 1 + 2 + 3 + ... + 10
+    public static void main4(String[] args) {
+        int n=10;
+        int ret = sumN(n);
+        System.out.println("1+2+3+...+10="+ret);
+    }
+    public static int sumN(int n){
+        int sum=n;
+        if(n>0){
+            sum+=sumN(n-1);;
+        }
+        return sum;
+    }
+
+    //按顺序打印一个数字的每一位(例如 1234 打印出 1 2 3 4) （递归）
+    public static void main3(String[] args) {
+        int num=4361;
+        printNum(num);
+    }
+    public static void printNum(int num){
+        int n=num%10;
+        num=num/10;
+        if(num>0){
+            printNum(num);
+        }
+        System.out.print(n+" ");
+    }
+
+    //在同一个类中,分别定义求两个整数的方法 和 三个小数之和的方法。 并执行代码，求出结果
+    public static void main2(String[] args) {
+        int a=2;
+        int b=3;
+        int c=1;
+        double m=1.1;
+        double n=2.2;
+        double s=3.3;
+        System.out.println(a+"、"+b+"、"+c+"的和为："+sumI(a,b,c));
+        System.out.println(m+"、"+n+"、"+s+"中的最大值为："+sumD(m,n,s));
+    }
+
+    public static int sumI(int a, int b, int c) {
+        return a+b+c;
+    }
+    public static double sumD(double a, double b, double c) {
+        return a+b+c;
+    }
+
+    //在同一个类中定义多个方法：要求不仅可以求两个整数的最大值，还可以求两个小数的最大值，以及两个小数和一个整数的大小关系
+    public static void main1(String[] args) {
+        int a=2;
+        int b=3;
+        double m=1.1;
+        double n=2.2;
+        System.out.println(a+"、"+b+"中的最大值为："+maxI(a,b));
+        System.out.println(m+"、"+n+"中的最大值为："+maxD(m,n));
+        System.out.println(m+"、"+n+"、"+b+"中的最大值为："+max3(m,n,b));
+    }
+    public static int maxI(int x,int y){
+        return x>y?x:y;
+    }
+    public static double maxD(double x,double y){
+        return x>y?x:y;
+    }
+    public static double max3(double x,double y,int z){
+        double ret1 =maxD(x,y);
+        double ret2=(double)z;
+        return (ret1>ret2)? ret1:z;
+    }
+}
