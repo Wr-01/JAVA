@@ -1,0 +1,71 @@
+package Java05;
+
+import java.util.Scanner;
+
+public class Operator {
+    //青蛙跳台阶问题
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("请输入台阶数：");
+        int num=scanner.nextInt();
+        int ret=jump(num);
+        System.out.println("青蛙跳"+num+"个台阶，有"+ret+"种方式。");
+    }
+    public static int jump(int num) {
+        if(num<=3){
+            return num;
+        }
+        return jump(num-1)+jump(num-2);
+    }
+
+    //写一个递归方法，输入一个非负整数，返回组成它的数字之和. 例如，输入 1729, 则应该返回1+7+2+9，它的和是19
+    public static void main3(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("请输入一个非负整数：");
+        int num=scanner.nextInt();
+        int ret=sumNum(num);
+        System.out.println("各位数之和为："+ret);
+    }
+    public static int sumNum(int num){
+        int sum=num%10;
+        if(num>9){
+            sum+=sumNum(num/10);
+        }
+        return sum;
+//        if(num<10){
+//            return num;
+//        }
+//        return sumNum(num/10)+num%10;
+    }
+
+    public static void main2(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("请输入一个整数：");
+        int num=scanner.nextInt();
+        int ret=factN(num);
+        System.out.println(ret);
+    }
+
+    public static int factN(int num) {
+        if(num==1){
+            return 1;
+        }
+        return num*factN(num-1);
+    }
+
+
+    public static void main1(String[] args) {
+        int a=2;
+        int b=1;
+        double m=1.1;
+        double n=2.2;
+        System.out.println(addI(a, b));
+        System.out.printf("%.1f",addD(m,n));
+    }
+    public static int addI(int x, int y) {
+        return x+y;
+    }
+    public static double addD(double x, double y) {
+        return x+y;
+    }
+}
