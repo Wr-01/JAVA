@@ -1,0 +1,78 @@
+package Java6array;
+
+/**
+ * @Author: 19261
+ * @Date: 2021/8/22 14:58
+ */
+public class ArrayMethod {
+    //创建一个 int 类型的数组, 元素个数为 100, 并把每个元素依次设置为 1 - 100
+    public static void main(String[] args) {
+        int[] arr=new int[100];
+        initArray(arr);
+        printArray(arr);
+    }
+    public static void initArray(int[] a){
+        int num=1;
+        for(int i=0;i<a.length;i++){
+            a[i]=num;
+            num++;
+        }
+    }
+    public static void printArray(int[] a){
+        for(int x:a){
+            System.out.print(x+" ");
+        }
+    }
+
+    //实现一个方法 printArray, 以数组为参数, 循环访问数组中的每个元素, 打印每个元素的值.
+    public static void main1(String[] args) {
+        int[] arr={2,4,6,8,10};
+        printArray(arr);
+    }
+//    public static void printArray(int[] a){
+//        for(int x:a){
+//            System.out.print(x+" ");
+//        }
+//    }
+
+        //实现一个方法 transform, 以数组为参数, 循环将数组中的每个元素 乘以 2 , 并设置到对应的数组元素上. 例如 原数组为 {1, 2, 3}, 修改之后为 {2, 4, 6}
+        public static void main2(String[] args) {
+            int[] arr={1,2,3};
+            transform(arr);
+            System.out.println("数组改写为：");
+            for(int x:arr){
+                System.out.println(x);
+            }
+        }
+        public static void transform(int[] a){
+            for(int i=0;i<a.length;i++){
+                a[i] *=2;
+            }
+        }
+    public static void main3(String[] args) {
+        int[] arr={3,4,5,7,6};
+        int ret =arrSum(arr);
+        System.out.println("数组元素之和为："+ret);
+    }
+    public static int arrSum(int[] a){
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+            sum+=a[i];
+        }
+        return sum;
+    }
+
+    //实现一个方法 avg, 以数组为参数, 求数组中所有元素的平均值(注意方法的返回值类型).
+    public static void main4(String[] args) {
+        int[] arr={3,4,5,7,6};
+        int ret =arrAvg(arr);
+        System.out.println("数平均值为："+ret);
+    }
+    public static int arrAvg(int[] a){
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+            sum+=a[i];
+        }
+        return sum/a.length;
+    }
+}
