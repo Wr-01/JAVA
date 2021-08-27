@@ -1,0 +1,126 @@
+package Java05;
+
+import java.util.Scanner;
+
+/**
+ * @Author: 19261
+ * @Date: 2021/8/25 16:25
+ */
+public class CinPrint {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNextInt()){
+            //如果没有扫描到下一个输入的int值 返回false;
+            int num=sc.nextInt();
+            String ss=String.valueOf(num);
+            System.out.println(ss);
+        }
+        while(sc.hasNextLine()){
+            String str=sc.nextLine();
+            int n=Integer.parseInt(str);
+            System.out.println(n);
+        }
+
+    }
+
+    public static void main7(String[] args) {
+
+        char[] ch= {'a','b','c'};
+//        String s = String.valueOf(ch);
+//        System.out.println(s);
+//        String s="sos";
+//        char[] c=s.toCharArray();
+//        char c1 = s.charAt(0);
+//        char c2 = s.charAt(1);
+//        char c3 = s.charAt(2);
+//        System.out.println(c1);
+//        System.out.println(c2);
+//        System.out.println(c3);
+//        String s="12";
+//        int a1=Integer.parseInt(s);
+//        System.out.println(a1);
+    }
+
+    public static void main6(String[] args) {
+        int a=33;
+        String s1 = a+"";
+        String s2 = String.valueOf(a);
+        String s3 = Integer.toString(a);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+    }
+
+    public static void main4(String[] args) {
+        char c = '1';
+        // 不能直接转换
+        int a1 = c;
+        int a2 = c - '0';
+        int a3 = Integer.parseInt(String.valueOf(c));
+        System.out.println(c);
+        System.out.println(a1);
+        System.out.println(a2);
+        System.out.println(a3);
+    }
+
+    public static void main3(String[] args) {
+        int a=2;
+        char c1=(char)a;
+        char c2 = (char) (a + '0');
+        char c3 = String.valueOf(a).toCharArray()[0];
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+
+    }
+
+    public static void main2(String[] args) {
+        int a=10;
+        double d=2.12324;
+        String s1="119";
+        String s2="是消防救援电话";
+        char c='a';
+        System.out.println(a);
+        System.out.println(d+a);
+        System.out.println(a+c);
+        System.out.println(s1+s2+c);
+
+//        System.out.print(a+"\n");
+//        System.out.print("double类型数据："+d);
+//        System.out.printf("%x\n",a);
+//        System.out.printf("%f\t",(float)a);
+//        System.out.printf("%.02f",d);
+
+    }
+
+    public static void main1(String[] args) {
+        String input = "1 fish 2 fish red fish blue fish";
+        Scanner s = new Scanner(input).useDelimiter("\\s*fish\\s*");
+        System.out.println(s.nextInt());
+        System.out.println(s.nextInt());
+        System.out.println(s.next());
+        System.out.println(s.next());
+        s.close();
+        Scanner sc=new Scanner(System.in);
+        byte b=sc.nextByte();
+        short ss=sc.nextShort();
+        int i=sc.nextInt();
+        long l=sc.nextLong();
+        float f=sc.nextFloat();
+        double d=sc.nextDouble();
+        char c=sc.next().charAt(0);
+        boolean n=sc.nextBoolean();
+        String s1=sc.next();  //读取输入一个字符串（不含空格）
+        String s2=sc.nextLine(); //读取输入一行字符串（可以含空字符）
+        sc.close();
+        System.out.println(b);
+        System.out.println(s);
+        System.out.println(i);
+        System.out.println(f);
+        System.out.println(d);
+        System.out.println(c);
+        System.out.println(n);
+        System.out.println(s1);
+        System.out.println(s2);
+    }
+}
